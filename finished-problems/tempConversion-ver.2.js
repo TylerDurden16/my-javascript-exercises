@@ -1,5 +1,5 @@
 const ftoc = function(fahrToCel) {
-  const celsius = (fahrToCel -32) / 1.8;
+  const celsius = (fahrToCel -32) * 5/9;
   const roundCel = Math.pow(10, 1)
   return Math.round(celsius * roundCel) / roundCel;
 };
