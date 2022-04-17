@@ -17,6 +17,7 @@ const findTheOldest = function(obj) {
     });
     return determineAge.at(0);
   }
+  
   const people = [
     {
       name: "Carly",
@@ -33,5 +34,6 @@ const findTheOldest = function(obj) {
       yearOfDeath: 1941,
     },
   ]
+    console.log(findTheOldest(people).name)
 // Do not edit below this line
 module.exports = findTheOldest;
