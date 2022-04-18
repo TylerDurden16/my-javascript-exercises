@@ -14,5 +14,6 @@ const books = [
     }
   ]
 console.log(getTheTitles(books));
+
 // Do not edit below this line
 module.exports = getTheTitles;
