@@ -1,19 +1,17 @@
 const findTheOldest = function(obj) {
-    let age = [];
-    let objAge = {};
-  
-    const determineAge = obj.map(person => {
-      if (!person.yearOfDeath) {
-        const date = new Date();
-        person.age = date.getFullYear() - person.yearOfBirth;
-      }
-      if (person.age == null) {
-        person.age = person.yearOfDeath - person.yearOfBirth;
-      }
+
+   const determineAge = obj.map(person => {                   
+      if (person.yearOfDeath == null) {                       //If person hasn't 
+        const date = new Date();                              //died, create age
+        person.age = date.getFullYear() - person.yearOfBirth; //key in people
+      }                                                       //obj 
+      if (person.age == null) {                              
+        person.age = person.yearOfDeath - person.yearOfBirth; //Determines age
+      }                                                      
      return person;
     })
-    .sort((lastPerson, currentPerson) => {
-      return lastPerson.age > currentPerson.age ? -1 : 1; 
+    .sort((lastPerson, currentPerson) => {                   //Sort by oldest
+      return lastPerson.age > currentPerson.age ? -1 : 1;    //age     
     });
     return determineAge.at(0);
   }
@@ -34,6 +32,7 @@ const findTheOldest = function(obj) {
       yearOfDeath: 1941,
     },
   ]
-    console.log(findTheOldest(people).name)
+
+console.log(findTheOldest(people).name)
 // Do not edit below this line
 module.exports = findTheOldest;
